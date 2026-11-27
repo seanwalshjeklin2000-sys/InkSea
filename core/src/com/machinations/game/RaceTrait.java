@@ -1051,7 +1051,7 @@ public abstract class RaceTrait {
         public static class Slow extends RaceTrait {
             @Override
             public void applyEffect(PlayerCharacter playerCharacter) {
-            /// You can take this to remove an attribute penalty for taking another trait, at the cost of halving your speed
+                /// You can take this to remove an attribute penalty for taking another trait, at the cost of halving your speed
             }
 
             public String getDescription() {
@@ -1115,27 +1115,27 @@ public abstract class RaceTrait {
             }
         }
 
-            public static class Fur extends RaceTrait {
-                @Override
-                public void applyEffect(PlayerCharacter playerCharacter) {
-                    /// +2 to checks against weather
-                }
-
-                public String getDescription() {
-                    return "Your birthday suit's a bit warmer than others, gain +2 to checks against the effects of cold weather.";
-                }
+        public static class Fur extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// +2 to checks against weather
             }
 
-            public static class Fanatic extends RaceTrait {
-                @Override
-                public void applyEffect(PlayerCharacter playerCharacter) {
-                    /// +2 to checks against weather
-                }
-
-                public String getDescription() {
-                    return "Football Teams, Ideology, God, if you support anything, you don't do it by halves, gain +1 Will and Constitution.";
-                }
+            public String getDescription() {
+                return "Your birthday suit's a bit warmer than others, gain +2 to checks against the effects of cold weather.";
             }
+        }
+
+        public static class Fanatic extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// +2 to checks against weather
+            }
+
+            public String getDescription() {
+                return "Football Teams, Ideology, God, if you support anything, you don't do it by halves, gain +1 Will and Constitution.";
+            }
+        }
 
         public static class Avatar extends RaceTrait {
             @Override
@@ -1230,22 +1230,614 @@ public abstract class RaceTrait {
             }
         }
 
+        public static class CannotMove extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///When rollng intiative, always go last, instead of negating a penalty, maybe just allocate an extra +4 to a stat?
+            }
+
+            public String getDescription() {
+                return "Woah, Slow down there buster, you were just going 3.3 Micrometers an hour. You Gain +4 to a chosen stat, but always move last in Combat, you can only take this Trait once.";
+            }
+        }
+
+        public static class Educated extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Gain a point in a lore skill,
+            }
+
+            public String getDescription() {
+                return "'Amber, i'm telling you, everyone's lying about doing the reading, so if you just do a little bit, you'll be fine' - Amber Fryst, Uncredentialled Communist. You gain +1 on a lore skill of your choice, even if you're not a Scholar.";
+            }
+        }
+
+        public static class SealedSystem extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Probably way too contextual for it's own good, what's the fantasy here? Well it's great endurance, innoculation from the elements
+                ///Idea, Pick a resistance? Neutralise a weakness? This way you can build "CUBE", the totall blank invlunerable cube who sees every damage type and blankly stares it to death
+            }
+
+            public String getDescription() {
+                return "A pelt can defeat cold, light absorbing skin, the heat, and lead based skin, radiation. Your species has evolved to contain a natural resistance, pick a damage type, and gain resistance to it, or neutralise a weakness.";
+            }
+        }
+
+        public static class Narrow extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// -1con
+                /// +1dex
+                /// set limited shapeshifting to true
+            }
+
+            public String getDescription() {
+                return "Why be a ball or a cube when you could be a tube? Gain Limited Shapeshifting to represent your ability to coil and fit through small gaps, +1 Dexterity, and -1 Constititon.";
+            }
+        }
+
+        public static class ToxicGas extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// give a natural weapon (we should make this a subtype of equipment that can't be removed, seems like the simpliest way)
+                /// for increasing the damage when taken, we could have a pretty simple form of simply having variants on the weapon pushed onto the given PC
+                ///
+            }
+
+            public String getDescription() {
+                return "When people describe your species public speakers as having 'An acerbic tongue', you are genuinely confused, what other types of tongue are there?" +
+                        " You gain a natural weapon that can create a cloud of Toxic gas, forcing your opponents to make a toughness save each turn, or take 1d4 Poison damage," +
+                        " this damage can be improved by taking the trait numerous times";
+            }
+        }
+
+        public static class InfraredVision extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// +1 Survival, kind of boring
+                ///
+            }
+
+            public String getDescription() {
+                return "It's remarkable how weird, you once noted, dating gets when you can literally see the other person's body heat rise and fall" +
+                        "You wonder if it's less fun this way, then recall that they probably have never tracked down a thief from the slowly dissipating heat image" +
+                        "of the dickhead who nicked your Gamestation, and abandoned the thought, gain +1 Survival for your tracking ability";
+            }
+        }
+
+        public static class UVVision extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// +1 Search, kind of boring
+                ///
+            }
+
+            public String getDescription() {
+                return "IT'S NOT FUCKING BEIGE, YOU GODDAMNED PHILLISITE, IT'S ZORN, I WORK IN ZORN, IT'S NOT A STATEMENT ON YOU BUYING ANYTHING, IT'S A STATEMENT" +
+                        "OF HOW FUCKING HARD IT IS TO RENDER A SUNSET USING ZORN, JUST BECAUSE YOU CAN'T SEE IT DOESN'T MEAN IT'S, STOP WRITING THAT DOWN" +
+                        "IT WASN'T PROFOUND, GOOD FUCKING GOD.- Trillo Carks, unwilling avant garde artist, fellow Ultra Violet seer" +
+                        "You gain +1 to your search skill, and a finer appreciation of the cosmic symphony of colour.";
+            }
+        }
+
+        public static class Fast extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///We'e probably going to want to make a seperate initiatve stat, that this will increase it by 20%
+            }
+
+            public String getDescription() {
+                return "Aesop can get bent, he never saw you race a tortoise. Gain a 20% Bonus to your initiative rolls.";
+            }
+        }
+
+        public static class ThreeDThinking extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///We'e probably going to want to make a seperate initiatve stat, that this will increase it by 20%
+            }
+
+            public String getDescription() {
+                return "Some people say 'Think outside the Box', when they barely know how to think inside of it, you're more of an expert, gain +1 to your pilot skill";
+            }
+        }
 
 
+        public static class StoneBody extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///I think we're going to have to crank up that dex penalty because taking this six times gets you a literal d24 worth of damage negation at game start which is awesome but fucking ludicrous
+            }
+
+            public String getDescription() {
+                return "You look like you were cut from a mountain, in fact, you may well have literally, been cut out of a mountain, gain 1d4 Natural Armour, at the cost of one dexterity.";
+            }
+        }
+
+        public static class GooBody extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// OK this one is utterly fucking broken, we are going to need to massively bump up that con penalty
+            }
+
+            public String getDescription() {
+                return "Alright, you may not be built like a statue, but, consider: ever tried stabbing Jelly to death? Gain the limited shapeshifting trait, gain resistance to physical damage, and lose one constitution ";
+            }
+        }
+
+        public static class Frozen extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+
+            }
+
+            public String getDescription() {
+                return "Old Man Winter's a rude way to refer to your grandad, gain a vulnerability to fire damage, and a resistance to cold damage.";
+            }
+        }
+
+        public static class WaterBreathing extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                //Probably going to add a boolean for "Can breathe liquid" which will give advantages in checks related to stuff done at sea
+            }
+
+            public String getDescription() {
+                return "It's a well known falsehood that 'fish have no word for water', you can prove them wrong and watch in delight as they drown trying to make a comeback. You can breathe in liquid environments.";
+
+            }
+        }
+
+        public static class Bioluminescent extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Idea to differentiate this one, maybe add a sneaking penalty and add a natural weapon that can do minor radiation damage to make it more of an interesting "You can literally blind people with flash power
+                ///style nonsense
+            }
+
+            public String getDescription() {
+                return "You may not have a glowing personality, but you sure do glow, you cast a constant light, allowing you to see in the dark";
+
+            }
+        }
+
+        public static class Nightvision extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Just flip a "Can see in dark" boolean to true
+            }
+
+            public String getDescription() {
+                return "It's so cute when the Prey thinks the absence of the sun will save them. You can see in the Dark.";
+
+            }
+        }
+
+        public static class AcuteHearing extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Add a "SensoryBonus Hearing" that we can apply to checks related to hearing
+            }
+
+            public String getDescription() {
+                return "Your species music infuriates others, while most cannot properly differentiate 1/256th of an Octave,for you, it's hilariously obvious. gain bonuses on Checks related to hearing.";
+
+            }
+        }
+
+        public static class AcuteSenseOfSmell extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///increase Search and Survival by one point
+            }
+
+            public String getDescription() {
+                return "Some children learn the colours of the rainbow at nursery, your species might, but they also learn the beauty of the olfactory continuity cylinder, Gain +1 to your Search and Survival skills";
+
+            }
+        }
+
+        public static class PackMentality extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///"Help" functions in combat aren't done yet, as combat isn't done yet, +2 sounds like a lot, but like, you are giving up your turn to do it
+            }
+
+            public String getDescription() {
+                return "A 'Lone wolf' is your species' word for 'Total Moron' Gain a +2 Bonus to helping an ally aim and deal damage in combat.";
+
+            }
+        }
+
+        public static class DefensiveCloud extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// Add a natural weapon that gives a defensive bonus that lasts a few turns
+            }
 
 
+            public String getDescription() {
+                return "Everyone loves to make fun of Octopi until they're stuck in a cloud they can't see through with 8 angry knives stabbing them. You can produce a defensive cloud, giving you bonuses to defence (define later)";
+
+            }
+        }
+
+        public static class EchoLocation extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// Add see in the dark,maybe also a natural weapon to let "Batboy shrieking his enemies to death" have this work as less "here is another see in the dark flavour lol"
+            }
 
 
+            public String getDescription() {
+                return "Cartography for your species is as natural as shouting 'Yodelheyhehoo!'. You can see in the dark even if blinded.";
+
+            }
+        }
+
+        public static class ChemicalFeast extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Add massive bonuses to Poison checks, probably have some kind of system of rotten food or cheap chemicals that these guys can use for HP recovery
+            }
 
 
+            public String getDescription() {
+                return "A lot of the Galaxy is perfectly content with Sodium Chloride, but, ohhh, add a bit of Potassium Cyanide to your meal and all of a sudden everyone's judgy. You can consume normally inedible chemicals, and in fact, might even prefer them.";
+
+            }
+        }
+
+        public static class PoisonResistant extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Add massive bonuses to Poison checks
+            }
 
 
+            public String getDescription() {
+                return "Fugu? Fuggedabout it. You are resistant to Poisons.";
+
+            }
+        }
+
+        public static class Cybernetics extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Add this when we add the hell that is going to be Augmentations, Glitch, etc.
+            }
 
 
+            public String getDescription() {
+                return "You can understand the eternal recursive cycle of input, controller, output, but also understand it could be improved with a kickass Robo-arm. Gain a free, basic augmentation (below 100 GP)";
 
+            }
+        }
+
+        public static class FearAttack extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Add a natural weapon that does what the description says, original has "Flee", but that feels kind of lame and gets to te eternal "Bosses don't interact with my chosen things" problem
+            }
+
+
+            public String getDescription() {
+                return "A Bullet's all well and good but sapient minds are more than capable of brutally torturing themselves, if you just give them a push. Once per encounter, you can force your enemies to make a Charm save, inflicting the frightened condition on them if they fail.";
+
+            }
+        }
+
+        public static class SelfProtecting extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///+1 to Logic and will saves
+            }
+
+
+            public String getDescription() {
+                return "Living inside a six feet thick lead mech is one thing, but if you hate yourself for doing it, is it really worth it? Gain +1 to your Logic and Will saves, to protect your ego.";
+
+            }
+        }
+
+        public static class PowerUp extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Add natural weapon that has a popup allowing a player to basically load themselves into the gun
+                ///Rulebook has a "You can also use this for machines at the GM's digression but frankly, i don't want to get into a "well, how much HP should a point extra in a skill be worth" for every check related to a machine in the game
+            }
+
+
+            public String getDescription() {
+                return "There's a bit of yourself in everything you do, so why would burning someones face off with a laser pistol be any different? You gain the ability to place portions of your HP as bonus damage on your next shot with an energy weapon.";
+
+            }
+        }
+
+        public static class TechZen extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Add +1 to ExoTech, which can bring it above 6
+                ///Does raise an interesting question of Checks above 6, Motsp works on a over sitation with skills being 1D6, so a few ExoTech skill checks of 7 or Higher for seriously insane shit like an early game BFG equivilant could be fun
+            }
+
+
+            public String getDescription() {
+                return "Gittenian Trinary, Ancient Rombulian Hydraulics, COBOL, if it's utterly antiquated technology, you are Home. You gain +1 to your Exotech skill, and can bring it above 6.";
+
+            }
+        }
+
+        public static class Fleet extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Add +1 to ExoTech, which can bring it above 6
+                ///Does raise an interesting question of Checks above 6, Motsp works on a over sitation with skills being 1D6, so a few ExoTech skill checks of 7 or Higher for seriously insane shit like an early game BFG equivilant could be fun
+            }
+
+
+            public String getDescription() {
+                return "Jack be nimble , Jack be quick, Jack rarely trips on his own dick. Gain +1 Dexterity.";
+
+            }
+        }
+
+        public static class Emotive extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                //add one wisdom
+            }
+
+            public String getDescription() {
+                return "Your body language is eerily simple and yet totally communicative. Gain +1 Wisdom";
+
+            }
+        }
+
+        public static class Scales extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                //add one wisdom
+            }
+
+            public String getDescription() {
+                return "Skin is overated, ever see it stop a knife? Course you haven't, your scaled body adds +1 to your armour rolls.";
+
+            }
+        }
+
+        public static class CombatReflexes extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                //add two iniative
+            }
+
+            public String getDescription() {
+                return "Your deep understanding of martial ways has made you well attuned to the ancient method of 'shooting your opponent in the face before he can do the same to you', Gain +2 to your Initiative rolls.";
+
+            }
+        }
+
+        public static class Tiny extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                //Reduces HP, adds close and ranged def (?)
+            }
+
+            public String getDescription() {
+                return "Float Like a Butterfly, Sting like a Bee, Live better than any dumb collosus with his head in the trees.";
+
+            }
+        }
+
+        public static class IntimateOfNature extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Add five Planet types that we can set in map data, Urban, Temperate, Hot, Cold, and Jungilic, on taking the trait more than once, adjust the underlying effect to be stronger? Could be a pain in the ass, the thing is
+                ///We're probably going to have to run a "Check relevant bonuses" function for our events regardless, which is probably going to be fine once we actually make it as simple as being able to group them and set a single variable in the constructor to say "YES ICE2674 IS COLD"
+            }
+
+            public String getDescription() {
+                return "It's a bit hard not to be at least a bit Parochial when your entire physiology is literally tied to home. Gain +2 Survival on PLanets of Your Homeworld's Ecology (pick when you take this trait)," +
+                        "and -1 on Planets that are not, You can take this repeatedly, if you take your claim that Ice-Rock 2674, your Home, is intrinsically superior to any shithole dessert or temperate zone in the galaxy, completely seriously.";
+
+            }
+        }
+
+        public static class LiveOn extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Exactly what it says, upon death, a pop up arises, first, the penalty, then, who takes the penalty
+            }
+
+            public String getDescription() {
+                return "You cannot die. Hey, wait, hold on, hold on, calm down, you can never Die, if you choose! If you do, you're looking at -TWO to ALL attributes," +
+                        " -SIX to one, or -TWO, to a skill... Though of course, should any willing sucke- you mean, kindly hosts!, be travelling with you, well, what are blood bags- Friends! You meant friends!" +
+                        "Then what are friends for? It also costs three trait points, and, you could choose to die, but come on, what kind of Parasite would do that?";
+            }
+        }
+
+        public static class HostPowers extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///Exactly what it says, upon death, a pop up arises, first, the penalty, then, who takes the penalty
+            }
+
+            public String getDescription() {
+                return "It's called kleptocnidy, technically, you know it as the thing that let your species historically roast Fire Breathing Tokklem's over a spit with a taste of their own medicine." +
+                        "You can borrow a party member's natural weapon, and use it as your own for the rest of a fight.";
+            }
+        }
+
+        public static class Seperate extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                ///
+            }
+
+            public String getDescription() {
+                return "You are Seperate but equal. Not, not in the racist way, look, this started bad, let's, i'll tell you what you can do" +
+                        ". You can sacrifice half your HP, rounded down, to provide yourself with an Extra Action for the rest of a given combat, represeting your personage splitting into different bodies.";
+            }
+        }
+
+        public static class Serene extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                playerCharacter.setCharmSave(playerCharacter.getCharmSave() + 1);
+                playerCharacter.setWillSave(playerCharacter.getWillSave() + 1);
+            }
+
+            public String getDescription() {
+                return "Everyone thinks you're so fucking above it all, and frankly, you are, having abandoned the wordly wiles of harlots (anyone who may be interested in Intimacy)" +
+                        "And the endless horde of cruel mindworms (Alright i concede you may have a point on this one), you gain +1 to your Charm and Will saves. Bully for You.";
+            }
+        }
+
+        public static class Interface extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                playerCharacter.getSkills().setSkillValue(Skills.Skill.SECURITY,
+                        playerCharacter.getSkills().getSkillValue(Skills.Skill.SECURITY) + 1);
+
+                ///Should change this when we add in that selective improvement things for Events, so that if the thing is computer security tagged, you get the better boost, avoids redundancy as well
+            }
+
+            public String getDescription() {
+                return "Who the fuck is 'Krezzik' So called 'Master Thief'? You know a guy from a hacker forum who wiped out the entire GDP of Git's worth of Palladium and didn't get out his chair, he carries a lock pick? Fucking Lmao, Who is this dipshit???." +
+                        " Gain +2 to your Security skill when engaging with computer security";
+
+            }
+        }
+
+        public static class KillerInstinct extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// Add +2 to Close Attack when combat statistics are implemented
+            }
+
+            public String getDescription() {
+                return "Every army since the invention of the firearm, and then lightarm, has been desperately attempting to prove that actually, " +
+                        "hitting a man with something incredibly unpleasant up close can defeat thousands of cowardly bullets fired by even more cowardly men" +
+                        "When doing this, they Cite your species, and then everyone gets a bit quiet and someone says 'Fuck, good point' Gain +2 to your Close Attack.";
+            }
+        }
+
+        public static class Venom extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// Add 1d4 additional Poison damage to natural weapons
+                /// Enemy must fail a Toughness save to receive this damage
+                /// Increase damage die for each subsequent selection
+            }
+
+            public String getDescription() {
+                return "Did you know that Torkid Kneels had 23 Sensory Organs more than the galactic average? Did you know he died screaming in Agony, despite his millions," +
+                        " having picked a fight with 'Dave Rattletooth', local shitkicker who had access to venom on his claws? Much to think on." +
+                        " Your natural attacks inflict an additional 1d4 Poison damage if your opponent fails a Toughness save." +
+                        " Taking this trait repeatedly increases the damage die.";
+            }
+        }
+
+        public static class MindControl extends RaceTrait {
+            @Override
+            public void applyEffect(PlayerCharacter playerCharacter) {
+                /// Add 1d4 additional Poison damage to natural weapons
+                /// Enemy must fail a Toughness save to receive this damage
+                /// Increase damage die for each subsequent selection
+            }
+
+            public String getDescription() {
+                return "You're getting pretty sick of explaining you do not garner the ability to fully understand the inscurtable minds of anything from ants to something as insanely complex as other sapient beings" +
+                        ". However! You take do take amusement that lowering aggression thresholds and temporarily dulling psychological mechanisms associated with determining friends has everyone thinking you can." +
+                        "As an action you make a melee attack, with your target making a will save, if they fail, they spend their next turn attacking their friends.";
+
+            }
+
+            public static class Paralytic extends RaceTrait {
+                @Override
+                public void applyEffect(PlayerCharacter playerCharacter) {
+                    /// Add 1d4 additional Poison damage to natural weapons
+                    /// Enemy must fail a Toughness save to receive this damage
+                    /// Increase damage die for each subsequent selection
+                }
+
+                public String getDescription() {
+                    return "Your species evolved eating Fresh Meat. No, fresher than that. No, fresher than that" +
+                            ". You can use an action to use your natural weapon to attempt to paralyse a prospective meal, they must make a toughness save, and upon failure" +
+                            "are paralysed for 1 turn, taking this numerous times can increase this to 1d4, 6, and so on, creatures immune to Paralysis instead take double damage.";
+
+                }
+
+                public static class Engulf extends RaceTrait {
+                    @Override
+                    public void applyEffect(PlayerCharacter playerCharacter) {
+                        /// Add Engulf as a special natural attack, probably natural weapon added to inventory named "Engulfer" or something
+                        /// Automatically hit the engulfed target with natural attacks on subsequent turns
+                        /// Attacks directed at the engulfed target also hit the engulfing character
+                        /// Define escape conditions and initial resistance check later
+                    }
+
+                    public String getDescription() {
+                        return "Okay, so, right, billions of years of evolution, but what, really, did the Amoeba's get wrong? Exactly?" +
+                                " You gain a natural weapon to engulf an opponent, automatically hitting them with your natural attacks each subsequent turn." +
+                                " Any attacks that hit the engulfed opponent also hit you." +
+                                "While in this state, you may only attack your engulfed foe, or attatch to another.";
+                    }
+                }
+
+                public static class Fruiting extends RaceTrait {
+                    @Override
+                    public void applyEffect(PlayerCharacter playerCharacter) {
+                        /// Allow the player to produce consumable healing items
+                        /// Determine the cost, frequency and potency of fruit production
+                        /// Potentially increase production when taken multiple times
+                    }
+
+                    public String getDescription() {
+                        return "Look, is it technically cannabalism, sure, but it is delicious, and besides, you're trying to be nice, god, some people, huh." +
+                                "Besides, they're going to be shitting your seeds, it's literally, win-win." +
+                                " You can produce fruit from your own body, which can be consumed by yourself or other party members to restore HP.";
+
+                    }
+                }
+
+                public static class Shapeshifting extends RaceTrait {
+                    @Override
+                    public void applyEffect(PlayerCharacter playerCharacter) {
+                        ///Gain Limited ShapeShifting
+                    }
+
+                    public String getDescription() {
+                        return "The Firmness of Your Form is frequently in flux. You retain a general body shape, but can shapeshift as to fit into difficult to reach areas.";
+
+                    }
+                }
+
+
+                public static class TrueShapeshifting extends RaceTrait {
+                    @Override
+                    public void applyEffect(PlayerCharacter playerCharacter) {
+                        ///Does nothing when selected.
+                    }
+
+                    public String getDescription() {
+                        return "You have no face, but the mask." +
+                                "You have no form, but the mould." +
+                                "You could get up tommorrow, and walk away, become someone new, and nobody would ever know." +
+                                "Nobody even knows if you're real." +
+                                "Players cannot take this Racial Trait." +
+                                "But who knows if they are out there. and if they are, who they are pretending to be." +
+                                "Maybe you were? If you have, you have forgotten, perhaps one morning, That Thing took you, and now pilots a Ship of Thesus Burned";
+
+                    }
+                }
+            }
 
 
             // Add other traits as needed
 
+        }
     }
 }
